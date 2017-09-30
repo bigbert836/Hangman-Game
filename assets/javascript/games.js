@@ -224,6 +224,7 @@ document.onkeyup = function(event) {
 		for(i = 0; i < correctLetters.length; i++){
 			if(userGuess === correctLetters[i]){
 				alreadyGuessed = true;
+				console.log(correctLetters[i]);
 				break;
 			}
 			else{
@@ -259,11 +260,13 @@ document.onkeyup = function(event) {
 			winCount = winCount + 1;
 			document.getElementById("picture").innerHTML = words[n].image;
 			document.getElementById("wins").innerHTML = winCount;
+			correctLetters = [];
 			gameActive = false;
 		}
 		else if(wrongLetterCounter > 8){
 			document.getElementById("answer").innerHTML = "You Lose!<br><br>" + words[n].answer;
 			document.getElementById("picture").innerHTML = words[n].image;
+			correctLetters = [];
 			gameActive = false;
 		}
 
